@@ -6,6 +6,12 @@ Processes `transactions.json` and produces a summary report with:
 - Summary totals and status counts
 - SUCCESS amount stats (min/max/avg)
 
+# Part B: System Design
+```
+part-b/Payment Flow Explanation.pdf
+part-b/payment-flow.drawio.png
+```
+
 ## How To Run
 
 ### Prerequisites
