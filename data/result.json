@@ -1,0 +1,95 @@
+{
+  "totalRecords" : 18,
+  "validRecords" : 12,
+  "invalidRecords" : 6,
+  "invalidReasons" : {
+    "Invalid amount: must be > 0" : 2,
+    "Invalid currency: must be exactly 3 letters" : 2,
+    "Invalid status: must be SUCCESS, FAILED, or PENDING" : 1,
+    "Missing required field: merchantRef" : 1
+  },
+  "statusCounts" : {
+    "SUCCESS" : 9,
+    "FAILED" : 1,
+    "PENDING" : 2
+  },
+  "successAmountStats" : {
+    "min" : 12.99,
+    "max" : 199.0,
+    "avg" : 96.78
+  },
+  "duplicateCount" : 4,
+  "duplicateGroups" : [ {
+    "rule" : "TXID",
+    "groupKey" : "tx_0003",
+    "records" : [ {
+      "transactionId" : "tx_0003",
+      "merchantRef" : "m_spotify_001",
+      "amount" : 9.99,
+      "currency" : "USD",
+      "status" : "PENDING",
+      "createdAtUtc" : "2026-02-10T10:05:10Z"
+    }, {
+      "transactionId" : "tx_0003",
+      "merchantRef" : "m_spotify_001",
+      "amount" : 9.99,
+      "currency" : "USD",
+      "status" : "FAILED",
+      "createdAtUtc" : "2026-02-10T10:06:00Z"
+    } ]
+  }, {
+    "rule" : "MERCHANT_AMOUNT_DAY",
+    "groupKey" : "m_spotify_001_9.99_USD_2026-02-10",
+    "records" : [ {
+      "transactionId" : "tx_0003",
+      "merchantRef" : "m_spotify_001",
+      "amount" : 9.99,
+      "currency" : "USD",
+      "status" : "PENDING",
+      "createdAtUtc" : "2026-02-10T10:05:10Z"
+    }, {
+      "transactionId" : "tx_0003",
+      "merchantRef" : "m_spotify_001",
+      "amount" : 9.99,
+      "currency" : "USD",
+      "status" : "FAILED",
+      "createdAtUtc" : "2026-02-10T10:06:00Z"
+    } ]
+  }, {
+    "rule" : "MERCHANT_AMOUNT_DAY",
+    "groupKey" : "m_7eleven_001_120_THB_2026-02-10",
+    "records" : [ {
+      "transactionId" : "tx_0004",
+      "merchantRef" : "m_7eleven_001",
+      "amount" : 120.0,
+      "currency" : "THB",
+      "status" : "SUCCESS",
+      "createdAtUtc" : "2026-02-10T00:10:00Z"
+    }, {
+      "transactionId" : "tx_0005",
+      "merchantRef" : "m_7eleven_001",
+      "amount" : 120.0,
+      "currency" : "THB",
+      "status" : "SUCCESS",
+      "createdAtUtc" : "2026-02-10T23:55:00Z"
+    } ]
+  }, {
+    "rule" : "MERCHANT_AMOUNT_DAY",
+    "groupKey" : "m_grab_001_199_THB_2026-02-12",
+    "records" : [ {
+      "transactionId" : "tx_0007",
+      "merchantRef" : "m_grab_001",
+      "amount" : 199.0,
+      "currency" : "THB",
+      "status" : "SUCCESS",
+      "createdAtUtc" : "2026-02-12T12:00:00Z"
+    }, {
+      "transactionId" : "tx_0008",
+      "merchantRef" : "m_grab_001",
+      "amount" : 199.0,
+      "currency" : "THB",
+      "status" : "PENDING",
+      "createdAtUtc" : "2026-02-12T12:30:00Z"
+    } ]
+  } ]
+}
