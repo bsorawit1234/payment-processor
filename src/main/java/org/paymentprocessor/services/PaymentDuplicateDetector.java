@@ -1,8 +1,8 @@
 package org.paymentprocessor.services;
 
-import org.paymentprocessor.model.DuplicateGroup;
-import org.paymentprocessor.model.DuplicateReport;
 import org.paymentprocessor.model.PaymentRequest;
+import org.paymentprocessor.model.duplicate.DuplicateGroup;
+import org.paymentprocessor.model.duplicate.DuplicateReport;
 import org.paymentprocessor.model.types.DuplicateRule;
 
 import java.math.BigDecimal;

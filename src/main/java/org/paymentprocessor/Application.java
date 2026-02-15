@@ -1,11 +1,11 @@
 package org.paymentprocessor;
 
-import org.paymentprocessor.parser.JsonPaymentParser;
+import org.paymentprocessor.services.PaymentProcessor;
 
 import java.io.File;
 
 public class Application {
-     static void main(String[] args) {
+     public static void main(String[] args) {
         String inputFileName = null;
         String outputFileName = null;
         String baseDirectory = "data";
@@ -28,12 +28,9 @@ public class Application {
         File outputFile = new File(baseDirectory, outputFileName);
 
         try {
-            JsonPaymentParser parser = new JsonPaymentParser();
-
-            var requests = parser.readInputFile(inputFile.getPath());
-            for (var request : requests) {
-                System.out.println(request);
-            }
+            PaymentProcessor paymentProcessor = new PaymentProcessor();
+            paymentProcessor.process(inputFile, outputFile);
+            System.out.println("Report written to: " + outputFile.getPath());
 
         } catch (Exception e) {
             System.err.println("Application failed: " + e.getMessage());
