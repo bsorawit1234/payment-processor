@@ -6,9 +6,11 @@ import org.paymentprocessor.model.types.TransactionStatus;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class PaymentSummaryUtils {
 
@@ -17,8 +19,18 @@ public class PaymentSummaryUtils {
         statusCounts.put(TransactionStatus.SUCCESS.name(), 0);
         statusCounts.put(TransactionStatus.FAILED.name(), 0);
         statusCounts.put(TransactionStatus.PENDING.name(), 0);
+        Set<String> alreadySuccessTransactionIds = new HashSet<>();
 
         for (PaymentRequest request : validRequests) {
+            if (request.status == TransactionStatus.SUCCESS) {
+                if (alreadySuccessTransactionIds.contains(request.transactionId)) {
+                    continue;
+                }
+                alreadySuccessTransactionIds.add(request.transactionId);
+                statusCounts.put(TransactionStatus.SUCCESS.name(), statusCounts.get(TransactionStatus.SUCCESS.name()) + 1);
+                continue;
+            }
+
             String statusName = request.status.name();
             statusCounts.put(statusName, statusCounts.get(statusName) + 1);
         }
@@ -30,11 +42,16 @@ public class PaymentSummaryUtils {
         BigDecimal max = null;
         BigDecimal sum = BigDecimal.ZERO;
         int count = 0;
+        Set<String> alreadySuccessTransactionIds = new HashSet<>();
 
         for (PaymentRequest request : validRequests) {
             if (request.status != TransactionStatus.SUCCESS) {
                 continue;
             }
+            if (alreadySuccessTransactionIds.contains(request.transactionId)) {
+                continue;
+            }
+            alreadySuccessTransactionIds.add(request.transactionId);
 
             BigDecimal amount = request.amount;
             if (min == null || amount.compareTo(min) < 0) {
