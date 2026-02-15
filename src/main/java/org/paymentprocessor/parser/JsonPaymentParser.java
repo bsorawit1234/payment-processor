@@ -1,9 +1,9 @@
 package org.paymentprocessor.parser;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.json.JsonMapper;
-import org.paymentprocessor.model.PaymentRequest;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,10 +16,10 @@ public class JsonPaymentParser {
         this.objectMapper = JsonMapper.builder().findAndAddModules().build();
     }
 
-    public List<PaymentRequest> readInputFile(String filePath) {
+    public List<JsonNode> readInputFile(String filePath) {
         try {
             File inputFile = new File(filePath);
-            return objectMapper.readValue(inputFile, new TypeReference<List<PaymentRequest>>() {});
+            return objectMapper.readValue(inputFile, new TypeReference<List<JsonNode>>() {});
         } catch (IOException e) {
             System.err.println(e);
             throw new RuntimeException("Failed to parse the input JSON file at: " + filePath, e);
