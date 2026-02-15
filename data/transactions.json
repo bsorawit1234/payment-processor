@@ -1,0 +1,145 @@
+[
+  {
+    "transactionId": "tx_0001",
+    "merchantRef": "m_amazon_001",
+    "amount": 49.99,
+    "currency": "USD",
+    "status": "SUCCESS",
+    "createdAtUtc": "2026-02-10T08:15:30Z"
+  },
+  {
+    "transactionId": "tx_0002",
+    "merchantRef": "m_netflix_001",
+    "amount": 12.99,
+    "currency": "USD",
+    "status": "SUCCESS",
+    "createdAtUtc": "2026-02-10T09:00:00Z"
+  },
+  {
+    "transactionId": "tx_0003",
+    "merchantRef": "m_spotify_001",
+    "amount": 9.99,
+    "currency": "USD",
+    "status": "PENDING",
+    "createdAtUtc": "2026-02-10T10:05:10Z"
+  },
+  {
+    "transactionId": "tx_0003",
+    "merchantRef": "m_spotify_001",
+    "amount": 9.99,
+    "currency": "USD",
+    "status": "FAILED",
+    "createdAtUtc": "2026-02-10T10:06:00Z"
+  },
+  {
+    "transactionId": "tx_0004",
+    "merchantRef": "m_7eleven_001",
+    "amount": 120.0,
+    "currency": "THB",
+    "status": "SUCCESS",
+    "createdAtUtc": "2026-02-10T00:10:00Z"
+  },
+  {
+    "transactionId": "tx_0005",
+    "merchantRef": "m_7eleven_001",
+    "amount": 120.0,
+    "currency": "THB",
+    "status": "SUCCESS",
+    "createdAtUtc": "2026-02-10T23:55:00Z"
+  },
+  {
+    "transactionId": "tx_0006",
+    "merchantRef": "m_7eleven_001",
+    "amount": 120.0,
+    "currency": "THB",
+    "status": "SUCCESS",
+    "createdAtUtc": "2026-02-11T00:05:00Z"
+  },
+  {
+    "transactionId": "tx_0007",
+    "merchantRef": "m_grab_001",
+    "amount": 199.0,
+    "currency": "THB",
+    "status": "SUCCESS",
+    "createdAtUtc": "2026-02-12T12:00:00Z"
+  },
+  {
+    "transactionId": "tx_0008",
+    "merchantRef": "m_grab_001",
+    "amount": 199.0,
+    "currency": "THB",
+    "status": "PENDING",
+    "createdAtUtc": "2026-02-12T12:30:00Z"
+  },
+  {
+    "transactionId": "tx_0009",
+    "merchantRef": "m_grab_001",
+    "amount": 199.0,
+    "currency": "USD",
+    "status": "SUCCESS",
+    "createdAtUtc": "2026-02-12T13:00:00Z"
+  },
+  {
+    "transactionId": "tx_bad_0001",
+    "merchantRef": "m_bad_amount_001",
+    "amount": 0,
+    "currency": "USD",
+    "status": "SUCCESS",
+    "createdAtUtc": "2026-02-10T11:00:00Z"
+  },
+  {
+    "transactionId": "tx_bad_0002",
+    "merchantRef": "m_bad_amount_002",
+    "amount": -10.5,
+    "currency": "USD",
+    "status": "SUCCESS",
+    "createdAtUtc": "2026-02-10T11:05:00Z"
+  },
+  {
+    "transactionId": "tx_bad_0003",
+    "merchantRef": "m_bad_currency_001",
+    "amount": 15.0,
+    "currency": "US",
+    "status": "SUCCESS",
+    "createdAtUtc": "2026-02-10T11:10:00Z"
+  },
+  {
+    "transactionId": "tx_bad_0004",
+    "merchantRef": "m_bad_currency_002",
+    "amount": 15.0,
+    "currency": "USDT",
+    "status": "SUCCESS",
+    "createdAtUtc": "2026-02-10T11:12:00Z"
+  },
+  {
+    "transactionId": "tx_bad_0005",
+    "merchantRef": "m_bad_status_001",
+    "amount": 20.0,
+    "currency": "USD",
+    "status": "COMPLETED",
+    "createdAtUtc": "2026-02-10T11:15:00Z"
+  },
+  {
+    "transactionId": "tx_bad_0006",
+    "merchantRef": "m_bad_date_001",
+    "amount": 25.0,
+    "currency": "USD",
+    "status": "SUCCESS",
+    "createdAtUtc": "2026-02-10T11:20:00Z"
+  },
+  {
+    "transactionId": "tx_bad_0007",
+    "merchantRef": "m_bad_date_002",
+    "amount": 25.0,
+    "currency": "USD",
+    "status": "SUCCESS",
+    "createdAtUtc": "2026-02-10T11:25:00Z"
+  },
+  {
+    "transactionId": "tx_bad_0008",
+    "amount": 30.0,
+    "currency": "USD",
+    "status": "SUCCESS",
+    "createdAtUtc": "2026-02-10T11:30:00Z"
+  }
+]
